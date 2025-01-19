@@ -15,15 +15,15 @@ mongoose.connect(mongoURI, {
 }).then(() => console.log('MongoDB Connected'))
 .catch(err => console.log(err));
 
-// Define your Mongoose schema (if you don't have one already)
-const dataSchema = new mongoose.Schema({
-    // Define the fields of your data here
-    name: String,
-    value: Number,
-    // ... other fields
-});
+// // Define your Mongoose schema (if you don't have one already)
+// const dataSchema = new mongoose.Schema({
+//     // Define the fields of your data here
+//     name: String,
+//     value: Number,
+//     // ... other fields
+// });
 
-const Data = mongoose.model('Data', dataSchema, 'ips'); // 'your_collection_name' is important!
+const Data = mongoose.model('Data', dataSchema, 'datas'); // 'your_collection_name' is important!
 
 // API endpoint to get all data
 app.get('/api/data', async (req, res) => {
