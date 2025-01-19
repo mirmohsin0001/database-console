@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css'
 
 function App() {
     const [data, setData] = useState([]);
@@ -36,17 +37,17 @@ function App() {
     return (
         <div>
             <h1>Data from MongoDB</h1>
-            <ul>
+            <ol>
                 {data.map(item => (
                     <li key={item._id}> {/* Use _id as the key */}
-                        <p>IP Address: {item.ipAddress}</p>  
-                        <p>Latitude: {item.latitude}</p> 
-                        <p>Longitude: {item.longitude}</p> 
+                        <p>IP Address: {item.ipAddress}</p>
+                        <p>Latitude: {item.latitude}</p>
+                        <p>Longitude: {item.longitude}</p>
                         <p>Timestamp: {item.timestamp}</p> {/* Display your data fields */} <br />
                     </li>
-                  
+
                 ))}
-            </ul>
+            </ol>
         </div>
     );
 }
