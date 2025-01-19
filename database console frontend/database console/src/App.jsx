@@ -39,7 +39,10 @@ function App() {
             <ul>
                 {data.map(item => (
                     <li key={item._id}> {/* Use _id as the key */}
-                        <p>IP Address: {item.ipAddress}</p>  <p>Timestamp: {item.timestamp}</p> <p>Latitude: {item.latitude}</p> <p>Longitude: {item.longitude}</p> {/* Display your data fields */} <br />
+                        <p>IP Address: {item.ipAddress}</p>  
+                        <p>Latitude: {item.latitude}</p> 
+                        <p>Longitude: {item.longitude}</p> 
+                        <p>Timestamp: {item.timestamp}</p> {/* Display your data fields */} <br />
                     </li>
                   
                 ))}
