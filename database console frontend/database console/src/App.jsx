@@ -8,7 +8,7 @@ function App() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('/api/data'); // Use relative URL if frontend and backend are on the same domain/server
+                const response = await fetch('https://database-console-2.onrender.com/api/data'); // Use relative URL if frontend and backend are on the same domain/server
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
