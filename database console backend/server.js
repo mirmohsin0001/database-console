@@ -15,6 +15,13 @@ mongoose.connect(mongoURI, {
 }).then(() => console.log('MongoDB Connected'))
 .catch(err => console.log(err));
 
+const dataSchema = new mongoose.Schema({
+    ipAddress: String,
+    latitude: Number,
+    longitude: Number,
+    timestamp: { type: Date, default: Date.now },
+});
+
 const Data = mongoose.model('Data', dataSchema, 'datas'); // 'your_collection_name' is important!
 
 // API endpoint to get all data
