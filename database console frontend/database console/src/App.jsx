@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'
+import downArrow from './assets/downArrow.png'
+import upArrow from './assets/upArrow.png'
 
 function App() {
     const [data, setData] = useState([]);
@@ -29,6 +31,19 @@ function App() {
         fetchData();
     }, []);
 
+    const scrollToBottom = () => {
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth'
+        });
+    }
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
     if (loading) {
         return <div>Loading data...</div>;
     }
@@ -39,6 +54,8 @@ function App() {
 
     return (
         <div>
+            <img width={32} onClick={scrollToBottom} className='scrollDownBtn' src={downArrow} />
+            <img width={32} onClick={scrollToTop} className='scrollUpBtn' src={upArrow} />
             <h1>Data from MongoDB</h1>
             <ol>
                 {data.map(item => (
