@@ -14,7 +14,10 @@ function App() {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const jsonData = await response.json();
-                setData(jsonData);
+
+                const sortedData = jsonData.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+                setData(sortedData);
+
             } catch (err) {
                 console.error("Fetch error:", err);
                 setError(err);
