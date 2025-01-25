@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'
-import downArrow from './assets/downArrow.png'
-import upArrow from './assets/upArrow.png'
+
+import downArrowLight from './assets/downArrowLight.png';
+import upArrowLight from './assets/upArrowLight.png';
+import downArrowDark from './assets/downArrowDark.png';
+import upArrowDark from './assets/upArrowDark.png';
 
 function App() {
     const [data, setData] = useState([]);
@@ -31,6 +34,10 @@ function App() {
         fetchData();
     }, []);
 
+    const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const downArrowSrc = isSystemDark ? downArrowDark : downArrowLight;
+    const upArrowSrc = isSystemDark ? upArrowDark : upArrowLight;
+
     const scrollToBottom = () => {
         window.scrollTo({
             top: document.documentElement.scrollHeight,
@@ -54,8 +61,8 @@ function App() {
 
     return (
         <div>
-            <img width={32} onClick={scrollToBottom} className='scrollDownBtn' src={downArrow} />
-            <img width={32} onClick={scrollToTop} className='scrollUpBtn' src={upArrow} />
+            <img width={32} onClick={scrollToBottom} className='scrollDownBtn' src={downArrowSrc} />
+            <img width={32} onClick={scrollToTop} className='scrollUpBtn' src={upArrowSrc} />
             <h1>Data from MongoDB</h1>
             <ol>
                 {data.map(item => (
