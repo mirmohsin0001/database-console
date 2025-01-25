@@ -19,7 +19,7 @@ const dataSchema = new mongoose.Schema({
     ipAddress: String,
     latitude: Number,
     longitude: Number,
-    timestamp: { type: Date, default: Date.now },
+    timestamp: String,
 });
 
 const Data = mongoose.model('Data', dataSchema, 'datas'); // 'your_collection_name' is important!
