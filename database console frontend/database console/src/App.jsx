@@ -70,8 +70,8 @@ function App() {
                         <p>IP Address: {item.ipAddress}</p>
                         <p>Latitude: {item.latitude}</p>
                         <p>Longitude: {item.longitude}</p>
-                        <a href={`https://www.google.com/maps/search/?api=1&query=${item.latitude},${item.longitude}`}>Open in Google Maps</a>
                         <p>Timestamp: {item.timestamp}</p> {/* Display your data fields */}
+                        <a href={`https://www.google.com/maps/search/?api=1&query=${item.latitude},${item.longitude}`}>Open in Google Maps</a>
                         
                     </li>
 
